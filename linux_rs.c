@@ -14,13 +14,8 @@ int main()
     {
         return EXIT_SUCCESS;
     }
-    int fd = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
+    int fd = socket(AF_INET, SOCK_STREAM, 0);
     if (fd < 0)
-    {
-        abort();
-    }
-    int opt = 1;
-    if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)))
     {
         abort();
     }
